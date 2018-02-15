@@ -24,7 +24,7 @@ for (var k=0; k<143; k++) {
   if (!(n%11)) {n/=11; d/=11;}  
   ret += 
     S(h?h:12)+':'+S(m)+':'+
-    S(s)+(n?"<small><sup>"+n+"</sup>&frasl;<sub>"+d+"</sub></small>":"")+"<br>"
+    S(s)+(n?"<small> <sup>"+n+"</sup>&frasl;<sub>"+d+"</sub></small>":"")+"<br>"
 }
 document.getElementById('swaps').innerHTML = ret;
 </script>
