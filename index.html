@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Hand Swaps</title>
+  <style>* {font-family: sans-serif;}</style>
+</head>
+<body>
+Valid hand-swap configurations:
+  <div id="swaps"></div>
+<script>
+function S(x) {
+  return ("00"+x).substr(-2)
+}
+ret = ""
+for (var k=0; k<143; k++) {
+  var h = Math.floor(12*k/143);
+  var m = Math.floor(720*k/143)%60;  
+  var s = Math.floor(300*k/143)%60;
+  var n = (14*k)%143;
+  var d = 143;
+  if (!(n%13)) {n/=13; d/=13;}
+  if (!(n%11)) {n/=11; d/=11;}  
+  ret += 
+    S(h?h:12)+':'+S(m)+':'+
+    S(s)+(n?"<small><sup>"+n+"</sup>&frasl;<sub>"+d+"</sub></small>":"")+"<br>"
+}
+document.getElementById('swaps').innerHTML = ret;
+</script>
+</body>
+</html>
